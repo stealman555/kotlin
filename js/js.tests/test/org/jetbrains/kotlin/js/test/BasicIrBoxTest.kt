@@ -87,7 +87,7 @@ abstract class BasicIrBoxTest(
 
         val runtimeKlib = runtimes[runtime]!!
 
-        val libraries = config.configuration[JSConfigurationKeys.LIBRARIES]!!.map { File(it).name }
+        val libraries = config.libraries.map(File::getName)
         val transitiveLibraries = config.configuration[JSConfigurationKeys.TRANSITIVE_LIBRARIES]!!.map { File(it).name }
 
         // TODO: Add proper depencencies
