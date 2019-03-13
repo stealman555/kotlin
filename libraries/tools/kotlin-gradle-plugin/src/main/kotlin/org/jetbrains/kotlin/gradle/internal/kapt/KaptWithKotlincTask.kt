@@ -83,5 +83,5 @@ open class KaptWithKotlincTask : KaptTask(), CompilerArgumentAwareWithInput<K2JV
     }
 
     private val isAtLeastJava9: Boolean
-        get() = SystemInfo.isJavaVersionAtLeast(9, 0, 0)
+        get() = false//SystemInfo.isJavaVersionAtLeast(9, 0, 0)
 }

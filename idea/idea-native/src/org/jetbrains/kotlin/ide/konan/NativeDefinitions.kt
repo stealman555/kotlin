@@ -82,7 +82,7 @@ class CLanguageInjector : LanguageInjector {
         if (!host.isValid) return
 
         if (host is NativeDefinitionsCodeImpl && cLanguage != null) {
-            val range = host.getTextRange().shiftLeft(host.startOffsetInParent)
+            val range = host.getTextRange().shiftLeft(host.getStartOffsetInParent())
             registrar.addPlace(cLanguage, range, null, null)
         }
     }
