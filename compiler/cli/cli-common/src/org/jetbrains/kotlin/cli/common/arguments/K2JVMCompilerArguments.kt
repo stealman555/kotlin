@@ -281,6 +281,13 @@ class K2JVMCompilerArguments : CommonCompilerArguments() {
     )
     var friendPaths: Array<String>? by FreezableVar(null)
 
+    // needed for IC and KAPT
+    @Argument(
+        value = "-Xallow-no-source-files",
+        description = "Allow no source files"
+    )
+    var allowNoSourceFiles: Boolean by FreezableVar(false)
+
     override fun configureAnalysisFlags(collector: MessageCollector): MutableMap<AnalysisFlag<*>, Any> {
         val result = super.configureAnalysisFlags(collector)
         result[JvmAnalysisFlags.strictMetadataVersionSemantics] = strictMetadataVersionSemantics
