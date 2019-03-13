@@ -16,6 +16,7 @@ import org.jetbrains.kotlin.fir.references.FirResolvedCallableReferenceImpl
 import org.jetbrains.kotlin.fir.resolve.buildUseSiteScope
 import org.jetbrains.kotlin.fir.scopes.ProcessorAction
 import org.jetbrains.kotlin.fir.scopes.ProcessorAction.NEXT
+import org.jetbrains.kotlin.fir.scopes.addImportingScopes
 import org.jetbrains.kotlin.fir.scopes.impl.FirTopLevelDeclaredMemberScope
 import org.jetbrains.kotlin.fir.symbols.ConeCallableSymbol
 import org.jetbrains.kotlin.fir.visitors.CompositeTransformResult
@@ -25,6 +26,7 @@ class FirAccessResolveTransformer : FirAbstractTreeTransformerWithSuperTypes(rev
 
     override fun transformFile(file: FirFile, data: Nothing?): CompositeTransformResult<FirFile> {
         return withScopeCleanup {
+            towerScope.addImportingScopes(file, file.session)
             towerScope.scopes += FirTopLevelDeclaredMemberScope(file, file.session)
             super.transformFile(file, data)
         }

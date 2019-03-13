@@ -1,2 +1,5 @@
 FILE: simpleStarImport.kt
     public final function foo(arg: R|b/d/Other|): R|b/d/Another|
+    public final function bar(): R|kotlin/Unit| {
+        R|b/d/baz|()
+    }

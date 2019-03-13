@@ -15,14 +15,9 @@ import org.jetbrains.kotlin.name.Name
 
 class FirResolvedImportImpl(
     val delegate: FirImport,
-    override val resolvedFqName: ClassId
+    override val packageFqName: FqName,
+    override val relativeClassName: FqName?
 ) : FirResolvedImport, FirImport {
-    override val packageFqName: FqName
-        get() = resolvedFqName.packageFqName
-
-    override val relativeClassName: FqName
-        get() = resolvedFqName.relativeClassName
-
     override val aliasName: Name?
         get() = delegate.aliasName
 
