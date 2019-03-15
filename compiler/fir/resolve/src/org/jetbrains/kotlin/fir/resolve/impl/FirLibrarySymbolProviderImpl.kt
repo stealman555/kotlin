@@ -73,7 +73,7 @@ class FirLibrarySymbolProviderImpl(val session: FirSession) : FirSymbolProvider 
             return firSymbol
         }
 
-        fun getClassLikeSymbolByFqName(classId: ClassId, provider: FirSymbolProvider): ConeClassLikeSymbol? {
+        fun getClassLikeSymbolByFqName(classId: ClassId): ConeClassLikeSymbol? {
 
             if (classId !in classDataFinder.allClassIds) return null
             return lookup.getOrPut(classId, { FirClassSymbol(classId) }) { symbol ->
@@ -144,7 +144,7 @@ class FirLibrarySymbolProviderImpl(val session: FirSession) : FirSymbolProvider 
 
     override fun getClassLikeSymbolByFqName(classId: ClassId): ConeClassLikeSymbol? {
         return allPackageFragments[classId.packageFqName]?.firstNotNullResult {
-            it.getClassLikeSymbolByFqName(classId, this)
+            it.getClassLikeSymbolByFqName(classId)
         } ?: with(classId) {
             val className = relativeClassName.asString()
             val kind = FunctionClassDescriptor.Kind.byClassNamePrefix(packageFqName, className) ?: return@with null
