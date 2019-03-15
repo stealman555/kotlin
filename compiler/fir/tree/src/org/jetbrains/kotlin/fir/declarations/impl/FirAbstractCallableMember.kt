@@ -11,7 +11,7 @@ import org.jetbrains.kotlin.descriptors.Visibility
 import org.jetbrains.kotlin.fir.FirElement
 import org.jetbrains.kotlin.fir.FirSession
 import org.jetbrains.kotlin.fir.declarations.FirCallableMember
-import org.jetbrains.kotlin.fir.symbols.FirBasedSymbol
+import org.jetbrains.kotlin.fir.symbols.impl.FirCallableSymbol
 import org.jetbrains.kotlin.fir.transformSingle
 import org.jetbrains.kotlin.fir.types.FirTypeRef
 import org.jetbrains.kotlin.fir.visitors.FirTransformer
@@ -19,14 +19,14 @@ import org.jetbrains.kotlin.name.Name
 
 abstract class FirAbstractCallableMember : FirAbstractMemberDeclaration, FirCallableMember {
 
-    final override val symbol: FirBasedSymbol<FirCallableMember>
+    final override val symbol: FirCallableSymbol
     final override var receiverTypeRef: FirTypeRef?
     final override var returnTypeRef: FirTypeRef
 
     constructor(
         session: FirSession,
         psi: PsiElement?,
-        symbol: FirBasedSymbol<FirCallableMember>,
+        symbol: FirCallableSymbol,
         name: Name,
         receiverTypeRef: FirTypeRef?,
         returnTypeRef: FirTypeRef
@@ -40,7 +40,7 @@ abstract class FirAbstractCallableMember : FirAbstractMemberDeclaration, FirCall
     constructor(
         session: FirSession,
         psi: PsiElement?,
-        symbol: FirBasedSymbol<FirCallableMember>,
+        symbol: FirCallableSymbol,
         name: Name,
         visibility: Visibility,
         modality: Modality?,

@@ -5,9 +5,7 @@
 
 package org.jetbrains.kotlin.fir.symbols.impl
 
-import org.jetbrains.kotlin.fir.declarations.FirCallableMember
-import org.jetbrains.kotlin.fir.symbols.AbstractFirBasedSymbol
 import org.jetbrains.kotlin.fir.symbols.CallableId
 import org.jetbrains.kotlin.fir.symbols.ConePropertySymbol
 
-class FirPropertySymbol(override val callableId: CallableId) : ConePropertySymbol, AbstractFirBasedSymbol<FirCallableMember>()
+class FirPropertySymbol(override val callableId: CallableId) : ConePropertySymbol, FirCallableSymbol()

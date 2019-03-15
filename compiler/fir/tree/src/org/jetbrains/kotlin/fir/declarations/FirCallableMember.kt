@@ -7,6 +7,7 @@ package org.jetbrains.kotlin.fir.declarations
 
 import org.jetbrains.kotlin.fir.VisitedSupertype
 import org.jetbrains.kotlin.fir.symbols.FirSymbolOwner
+import org.jetbrains.kotlin.fir.symbols.impl.FirCallableSymbol
 import org.jetbrains.kotlin.fir.types.FirTypeRef
 import org.jetbrains.kotlin.fir.visitors.FirVisitor
 
@@ -17,6 +18,8 @@ interface FirCallableMember :
     val isOverride: Boolean get() = status.isOverride
 
     val isStatic: Boolean get() = status.isStatic
+
+    override val symbol: FirCallableSymbol
 
     val receiverTypeRef: FirTypeRef?
 
@@ -29,3 +32,4 @@ interface FirCallableMember :
         returnTypeRef.accept(visitor, data)
     }
 }
+
