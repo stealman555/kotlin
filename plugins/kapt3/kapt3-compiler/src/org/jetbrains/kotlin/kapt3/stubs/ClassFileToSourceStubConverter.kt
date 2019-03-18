@@ -1026,78 +1026,85 @@ class ClassFileToSourceStubConverter(val kaptContext: KaptContextForStubGenerati
     }
 
     private fun convertConstantValueArguments(constantValue: Any?, args: List<KtExpression>): JCExpression? {
+        if (args.isNotEmpty()) {
+            inferConstantValueArgumentsFromPsi(constantValue, args)?.let { return it }
+        }
+        return convertLiteralExpression(constantValue)
+    }
+
+    private fun inferConstantValueArgumentsFromPsi(constantValue: Any?, args: List<KtExpression>): JCExpression? {
         val singleArg = args.singleOrNull()
 
+        // Simple, one-element case handling
         if (constantValue.isOfPrimitiveType()) {
             // Do not inline primitive constants
-            tryParseReferenceToIntConstant(singleArg)?.let { return it }
-        }
-
-        fun tryParseTypeExpression(expression: KtExpression?): JCExpression? {
-            if (expression is KtReferenceExpression) {
-                val descriptor = kaptContext.bindingContext[BindingContext.REFERENCE_TARGET, expression]
-                if (descriptor is ClassDescriptor) {
-                    return treeMaker.FqName(descriptor.fqNameSafe)
-                } else if (descriptor is TypeAliasDescriptor) {
-                    descriptor.classDescriptor?.fqNameSafe?.let { return treeMaker.FqName(it) }
-                }
+            return tryParseReferenceToIntConstant(singleArg)
+        } else if (singleArg is KtClassLiteralExpression) {
+            if (constantValue == null) {
+                // Unresolved class literal
+                return tryParseTypeLiteralExpression(singleArg)
+            } else if (constantValue !is List<*>) {
+                // The constant value might be a vararg list of class literals
+                return null
             }
+        } else if (constantValue !is List<*>) {
+            return null
+        }
 
-            return when (expression) {
-                is KtSimpleNameExpression -> treeMaker.SimpleName(expression.getReferencedName())
-                is KtDotQualifiedExpression -> {
-                    val selector = expression.selectorExpression as? KtSimpleNameExpression ?: return null
-                    val receiver = tryParseTypeExpression(expression.receiverExpression) ?: return null
-                    return treeMaker.Select(receiver, treeMaker.name(selector.getReferencedName()))
-                }
-                else -> null
+        val callArgs = extractCallArgs(args) ?: return null
+
+        val convertedArgs = mapJListIndexed(callArgs) { index, expr ->
+            val constantValueForArg = if (callArgs.size == constantValue.size) constantValue[index] else null
+            convertConstantValueArguments(constantValueForArg, listOf(expr))
+        }
+
+        if (callArgs.size == convertedArgs.size) {
+            return treeMaker.NewArray(null, null, convertedArgs)
+        }
+
+        return null
+    }
+
+    private fun extractCallArgs(args: List<KtExpression>): List<KtExpression>? {
+        return when (val singleArg = args.singleOrNull()) {
+            is KtCallExpression -> {
+                val resultingDescriptor = singleArg.getResolvedCall(kaptContext.bindingContext)?.resultingDescriptor
+
+                if (resultingDescriptor is FunctionDescriptor && resultingDescriptor.fqNameSafe.asString() == "kotlin.arrayOf")
+                    singleArg.valueArguments.mapNotNull { it.getArgumentExpression() }
+                else
+                    null
             }
+            is KtCollectionLiteralExpression -> singleArg.getInnerExpressions()
+            else -> args
         }
+    }
 
-        fun tryParseTypeLiteralExpression(expression: KtExpression?): JCExpression? {
-            val literalExpression = expression as? KtClassLiteralExpression ?: return null
-            val typeExpression = tryParseTypeExpression(literalExpression.receiverExpression) ?: return null
-            return treeMaker.Select(typeExpression, treeMaker.name("class"))
-        }
+    private fun tryParseTypeLiteralExpression(expression: KtExpression?): JCExpression? {
+        val literalExpression = expression as? KtClassLiteralExpression ?: return null
+        val typeExpression = tryParseTypeExpression(literalExpression.receiverExpression) ?: return null
+        return treeMaker.Select(typeExpression, treeMaker.name("class"))
+    }
 
-        // Unresolved class literal
-        if (constantValue == null && singleArg is KtClassLiteralExpression) {
-            tryParseTypeLiteralExpression(singleArg)?.let { return it }
-        }
-
-        // Some of class literals in vararg list are unresolved
-        if (args.isNotEmpty() && args[0] is KtClassLiteralExpression && constantValue is List<*> && args.size != constantValue.size) {
-            val literalExpressions = mapJList(args, ::tryParseTypeLiteralExpression)
-            if (literalExpressions.size == args.size) {
-                return treeMaker.NewArray(null, null, literalExpressions)
-            }
-        }
-
-        // Probably arrayOf(SomeUnresolvedType::class, ...)
-        if (constantValue is List<*>) {
-            val callArgs = when (singleArg) {
-                is KtCallExpression -> {
-                    val resultingDescriptor = singleArg.getResolvedCall(kaptContext.bindingContext)?.resultingDescriptor
-
-                    if (resultingDescriptor is FunctionDescriptor && resultingDescriptor.fqNameSafe.asString() == "kotlin.arrayOf")
-                        singleArg.valueArguments.map { it.getArgumentExpression() }
-                    else
-                        null
-                }
-                is KtCollectionLiteralExpression -> singleArg.getInnerExpressions()
-                else -> null
-            }
-
-            // So we make sure something is absent in the constant value
-            if (callArgs != null && callArgs.size != constantValue.size) {
-                val literalExpressions = mapJList(callArgs, ::tryParseTypeLiteralExpression)
-                if (literalExpressions.size == callArgs.size) {
-                    return treeMaker.NewArray(null, null, literalExpressions)
-                }
+    private fun tryParseTypeExpression(expression: KtExpression?): JCExpression? {
+        if (expression is KtReferenceExpression) {
+            val descriptor = kaptContext.bindingContext[BindingContext.REFERENCE_TARGET, expression]
+            if (descriptor is ClassDescriptor) {
+                return treeMaker.FqName(descriptor.fqNameSafe)
+            } else if (descriptor is TypeAliasDescriptor) {
+                descriptor.classDescriptor?.fqNameSafe?.let { return treeMaker.FqName(it) }
             }
         }
 
-        return convertLiteralExpression(constantValue)
+        return when (expression) {
+            is KtSimpleNameExpression -> treeMaker.SimpleName(expression.getReferencedName())
+            is KtDotQualifiedExpression -> {
+                val selector = expression.selectorExpression as? KtSimpleNameExpression ?: return null
+                val receiver = tryParseTypeExpression(expression.receiverExpression) ?: return null
+                return treeMaker.Select(receiver, treeMaker.name(selector.getReferencedName()))
+            }
+            else -> null
+        }
     }
 
     private fun tryParseReferenceToIntConstant(expression: KtExpression?): JCExpression? {

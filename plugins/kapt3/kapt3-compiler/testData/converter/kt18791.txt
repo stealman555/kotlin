@@ -211,6 +211,14 @@ public final class MyActivity {
     public final void plainIntConstant() {
     }
 
+    @OnClick(value = {app.B.id.textView})
+    public final void plainIntConstant2() {
+    }
+
+    @OnClick(value = {app.B.id.textView, app.R.layout.mainActivity})
+    public final void plainIntConstantVararg() {
+    }
+
     public final int getPropB() {
         return 0;
     }
@@ -241,6 +249,15 @@ public final class MyActivity {
     public MyActivity() {
         super();
     }
+}
+
+////////////////////
+
+package app;
+
+public @interface OnClick {
+
+    int[] value() default {-1};
 }
 
 ////////////////////
