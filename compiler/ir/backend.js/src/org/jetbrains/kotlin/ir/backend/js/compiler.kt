@@ -7,6 +7,7 @@ package org.jetbrains.kotlin.ir.backend.js
 
 import com.intellij.openapi.project.Project
 import org.jetbrains.kotlin.backend.common.LoggingContext
+import org.jetbrains.kotlin.backend.common.phaser.PhaseConfig
 import org.jetbrains.kotlin.backend.common.phaser.invokeToplevel
 import org.jetbrains.kotlin.backend.common.serialization.DeserializationStrategy
 import org.jetbrains.kotlin.builtins.KotlinBuiltIns
@@ -84,6 +85,7 @@ fun compile(
     project: Project,
     files: List<KtFile>,
     configuration: CompilerConfiguration,
+    phaseConfig: PhaseConfig,
     compileMode: CompilationMode,
     immediateDependencies: List<KlibModuleRef>,
     allDependencies: List<KlibModuleRef>,
@@ -169,7 +171,7 @@ fun compile(
         return TranslationResult.CompiledKlib
     }
 
-    val context = JsIrBackendContext(moduleDescriptor, irBuiltIns, symbolTable, moduleFragment, configuration, compileMode)
+    val context = JsIrBackendContext(moduleDescriptor, irBuiltIns, symbolTable, moduleFragment, configuration, compileMode, phaseConfig)
 
     deserializedModuleFragments.forEach {
         ExternalDependenciesGenerator(
