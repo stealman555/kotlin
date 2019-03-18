@@ -210,7 +210,7 @@ class IrBuiltIns(
     val throwNpeSymbol = throwNpeFun.symbol
     val throwCceSymbol = throwCceFun.symbol
     val throwIseSymbol = throwIseFun.symbol
-    val booleanNotSymbol by lazy { symbolTable.referenceSimpleFunction(booleanNot) }
+    val booleanNotSymbol = symbolTable.referenceSimpleFunction(booleanNot)
     val noWhenBranchMatchedExceptionSymbol = noWhenBranchMatchedExceptionFun.symbol
     val illegalArgumentExceptionSymbol = illegalArgumentExceptionFun.symbol
 
