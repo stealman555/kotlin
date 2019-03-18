@@ -112,8 +112,9 @@ class IrUnaryPrimitiveImpl(
     endOffset: Int,
     type: IrType,
     origin: IrStatementOrigin?,
-    symbol: IrFunctionSymbol
-) : IrPrimitiveCallBase(startOffset, endOffset, type, origin, symbol, 1),
+    symbol: IrFunctionSymbol,
+    val hasDispatchReceiver: Boolean
+) : IrPrimitiveCallBase(startOffset, endOffset, type, origin, symbol, if (hasDispatchReceiver) 0 else 1),
     IrCallWithShallowCopy {
 
     constructor(
@@ -122,26 +123,41 @@ class IrUnaryPrimitiveImpl(
         type: IrType,
         origin: IrStatementOrigin?,
         symbol: IrFunctionSymbol,
+        hasReceiver: Boolean,
         argument: IrExpression
-    ) : this(startOffset, endOffset, type, origin, symbol) {
+    ) : this(startOffset, endOffset, type, origin, symbol, hasReceiver) {
         this.argument = argument
     }
 
     lateinit var argument: IrExpression
 
     override fun getValueArgument(index: Int): IrExpression? {
-        return when (index) {
-            ARGUMENT0 -> argument
+        return when {
+            !hasDispatchReceiver && index == ARGUMENT0 -> argument
             else -> null
         }
     }
 
     override fun putValueArgument(index: Int, valueArgument: IrExpression?) {
-        when (index) {
-            ARGUMENT0 -> argument = valueArgument ?: throw AssertionError("Primitive call $descriptor argument is null")
+        when {
+            !hasDispatchReceiver && index == ARGUMENT0 -> argument = valueArgument ?: throw AssertionError("Primitive call $descriptor argument is null")
             else -> throw AssertionError("Primitive call $descriptor: no such argument index $index")
         }
     }
+
+    override var dispatchReceiver: IrExpression?
+        get() = if (hasDispatchReceiver) argument else null
+        set(value) {
+            if (hasDispatchReceiver) {
+                if (value != null) {
+                    argument = value
+                } else {
+                    throw UnsupportedOperationException("Can't set unary operator receiver to null")
+                }
+            } else {
+                super.dispatchReceiver = value
+            }
+        }
 
     override fun <D> acceptChildren(visitor: IrElementVisitor<Unit, D>, data: D) {
         argument.accept(visitor, data)
@@ -152,7 +168,7 @@ class IrUnaryPrimitiveImpl(
     }
 
     override fun shallowCopy(newOrigin: IrStatementOrigin?, newCallee: IrFunctionSymbol, newSuperQualifier: IrClassSymbol?): IrCall =
-        IrUnaryPrimitiveImpl(startOffset, endOffset, type, newOrigin, newCallee)
+        IrUnaryPrimitiveImpl(startOffset, endOffset, type, newOrigin, newCallee, hasDispatchReceiver)
 }
 
 class IrBinaryPrimitiveImpl(

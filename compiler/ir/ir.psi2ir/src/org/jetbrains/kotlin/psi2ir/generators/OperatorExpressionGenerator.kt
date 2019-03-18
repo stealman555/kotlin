@@ -246,6 +246,7 @@ class OperatorExpressionGenerator(statementGenerator: StatementGenerator) : Stat
                     context.irBuiltIns.booleanType,
                     IrStatementOrigin.NOT_IN,
                     context.irBuiltIns.booleanNotSymbol,
+                    true,
                     irContainsCall
                 )
             else ->
@@ -277,6 +278,7 @@ class OperatorExpressionGenerator(statementGenerator: StatementGenerator) : Stat
                     context.irBuiltIns.booleanType,
                     IrStatementOrigin.EXCLEQEQ,
                     context.irBuiltIns.booleanNotSymbol,
+                    true,
                     irIdentityEquals
                 )
             else ->
@@ -319,6 +321,7 @@ class OperatorExpressionGenerator(statementGenerator: StatementGenerator) : Stat
                     context.irBuiltIns.booleanType,
                     IrStatementOrigin.EXCLEQ,
                     context.irBuiltIns.booleanNotSymbol,
+                    true,
                     irEquals
                 )
             else ->

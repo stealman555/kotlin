@@ -22,16 +22,19 @@ import org.jetbrains.kotlin.ir.expressions.IrStatementOrigin
 import org.jetbrains.kotlin.ir.expressions.IrWhen
 import org.jetbrains.kotlin.ir.expressions.impl.*
 import org.jetbrains.kotlin.ir.symbols.IrSimpleFunctionSymbol
+import org.jetbrains.kotlin.ir.types.IrType
 
 // TODO rewrite using IR Builders
 
 fun primitiveOp1(
     startOffset: Int, endOffset: Int,
     primitiveOpSymbol: IrSimpleFunctionSymbol,
+    primitiveOpReturnType: IrType,
     origin: IrStatementOrigin,
+    hasDispatchReceiver: Boolean,
     argument: IrExpression
 ): IrExpression =
-    IrUnaryPrimitiveImpl(startOffset, endOffset, primitiveOpSymbol.owner.returnType, origin, primitiveOpSymbol, argument)
+    IrUnaryPrimitiveImpl(startOffset, endOffset, primitiveOpReturnType, origin, primitiveOpSymbol, hasDispatchReceiver, argument)
 
 fun primitiveOp2(
     startOffset: Int, endOffset: Int,

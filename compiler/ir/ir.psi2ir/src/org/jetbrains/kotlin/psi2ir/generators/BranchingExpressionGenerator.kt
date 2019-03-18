@@ -222,6 +222,7 @@ class BranchingExpressionGenerator(statementGenerator: StatementGenerator) : Sta
                 ktCondition.startOffsetSkippingComments, ktCondition.endOffset,
                 context.irBuiltIns.booleanType,
                 IrStatementOrigin.EXCL, context.irBuiltIns.booleanNotSymbol,
+                true,
                 irInstanceOf
             )
         else
@@ -241,6 +242,7 @@ class BranchingExpressionGenerator(statementGenerator: StatementGenerator) : Sta
                     ktCondition.startOffsetSkippingComments, ktCondition.endOffset,
                     context.irBuiltIns.booleanType,
                     IrStatementOrigin.EXCL, context.irBuiltIns.booleanNotSymbol,
+                    true,
                     irInCall
                 )
             else -> throw AssertionError("Expected 'in' or '!in', got $inOperator")
