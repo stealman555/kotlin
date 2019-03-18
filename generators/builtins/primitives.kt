@@ -278,39 +278,32 @@ class GeneratePrimitives(out: PrintWriter) : BuiltInsSourceGenerator(out) {
         val thisName = fromIntegral.capitalized
         val otherName = toIntegral.capitalized
 
-        return if (compareByDomainCapacity(toIntegral, fromIntegral) < 0) {
-            if (toIntegral == PrimitiveType.CHAR) {
+        return if (toIntegral == PrimitiveType.CHAR) {
+            if (fromIntegral == PrimitiveType.SHORT) {
                 """
-                 * Returns the `$otherName` with the numeric value equal to this value truncated to ${toIntegral.bitSize} bits.
-                 */
-                """
-            } else {
-                """
-                 * If this value is in [$otherName.MIN_VALUE]..[$otherName.MAX_VALUE], the resulting `$otherName` value represents
-                 * the same numerical value as this `$thisName`.
-                 *
-                 * The resulting `$otherName` value is represented by the least significant ${toIntegral.bitSize} bits of this `$thisName` value.
-                 */
-                """
-            }
-        } else if (compareByDomainCapacity(toIntegral, fromIntegral) > 0) {
-            if (toIntegral == PrimitiveType.CHAR) {
-                """
-                 * Returns the `$otherName` with the numeric value equal to this value sign-extended to ${toIntegral.bitSize} bits.
-                 */
+                * Returns the `$otherName` with the numeric value equal to this value.
+                */
                 """
             } else {
                 """
-                 * The resulting `$otherName` value represents the same numerical value as this `$thisName`.
-                 *
-                 * The least significant ${fromIntegral.bitSize} bits of the resulting `$otherName` value are the same as the binary representation of this `$thisName` value,
-                 * whereas the most significant ${toIntegral.bitSize - fromIntegral.bitSize} bits are filled with the bit sign of this value.
+                 * The resulting `$otherName` value is equal to `this.toShort().to$otherName()`.
                  */
                 """
             }
-        } else { // Short -> Char
+        } else if (compareByDomainCapacity(toIntegral, fromIntegral) < 0) {
             """
-             * Returns the `$otherName` with the numeric value equal to this value.
+             * If this value is in [$otherName.MIN_VALUE]..[$otherName.MAX_VALUE], the resulting `$otherName` value represents
+             * the same numerical value as this `$thisName`.
+             *
+             * The resulting `$otherName` value is represented by the least significant ${toIntegral.bitSize} bits of this `$thisName` value.
+             */
+            """
+        } else {
+            """
+             * The resulting `$otherName` value represents the same numerical value as this `$thisName`.
+             *
+             * The least significant ${fromIntegral.bitSize} bits of the resulting `$otherName` value are the same as the binary representation of this `$thisName` value,
+             * whereas the most significant ${toIntegral.bitSize - fromIntegral.bitSize} bits are filled with the bit sign of this value.
              */
             """
         }

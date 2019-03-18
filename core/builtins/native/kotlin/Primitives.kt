@@ -191,7 +191,7 @@ public class Byte private constructor() : Number(), Comparable<Byte> {
     /**
      * Converts this [Byte] value to [Char].
      *
-     * Returns the `Char` with the numeric value equal to this value sign-extended to 16 bits.
+     * The resulting `Char` value is equal to `this.toShort().toChar()`.
      */
     public override fun toChar(): Char
     /**
@@ -669,7 +669,7 @@ public class Int private constructor() : Number(), Comparable<Int> {
     /**
      * Converts this [Int] value to [Char].
      *
-     * Returns the `Char` with the numeric value equal to this value truncated to 16 bits.
+     * The resulting `Char` value is equal to `this.toShort().toChar()`.
      */
     public override fun toChar(): Char
     /**
@@ -914,7 +914,7 @@ public class Long private constructor() : Number(), Comparable<Long> {
     /**
      * Converts this [Long] value to [Char].
      *
-     * Returns the `Char` with the numeric value equal to this value truncated to 16 bits.
+     * The resulting `Char` value is equal to `this.toShort().toChar()`.
      */
     public override fun toChar(): Char
     /**
