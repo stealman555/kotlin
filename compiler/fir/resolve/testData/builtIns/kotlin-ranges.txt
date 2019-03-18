@@ -1,1 +1,106 @@
+public open class CharProgression : R|kotlin/collections/Iterable<kotlin/Char>| {
+    public open operator function equals(other: R|kotlin/Any|): R|kotlin/Boolean|
+
+    public open function hashCode(): R|kotlin/Int|
+
+    public open function isEmpty(): R|kotlin/Boolean|
+
+    public open operator function iterator(): R|kotlin/collections/CharIterator|
+
+    public open function toString(): R|kotlin/String|
+
+}
+
+internal final class CharProgressionIterator : R|kotlin/collections/CharIterator| {
+    public open operator function hasNext(): R|kotlin/Boolean|
+
+    public open function nextChar(): R|kotlin/Char|
+
+}
+
+public final class CharRange : R|kotlin/ranges/CharProgression|, R|kotlin/ranges/ClosedRange<kotlin/Char>| {
+    public open operator function contains(value: R|kotlin/Char|): R|kotlin/Boolean|
+
+    public open operator function equals(other: R|kotlin/Any|): R|kotlin/Boolean|
+
+    public open function hashCode(): R|kotlin/Int|
+
+    public open function isEmpty(): R|kotlin/Boolean|
+
+    public open function toString(): R|kotlin/String|
+
+}
+
+<T> public abstract interface ClosedRange : R|kotlin/Any| {
+    public open operator function contains(value: R|T|): R|kotlin/Boolean|
+
+    public open function isEmpty(): R|kotlin/Boolean|
+
+}
+
+public open class IntProgression : R|kotlin/collections/Iterable<kotlin/Int>| {
+    public open operator function equals(other: R|kotlin/Any|): R|kotlin/Boolean|
+
+    public open function hashCode(): R|kotlin/Int|
+
+    public open function isEmpty(): R|kotlin/Boolean|
+
+    public open operator function iterator(): R|kotlin/collections/IntIterator|
+
+    public open function toString(): R|kotlin/String|
+
+}
+
+internal final class IntProgressionIterator : R|kotlin/collections/IntIterator| {
+    public open operator function hasNext(): R|kotlin/Boolean|
+
+    public open function nextInt(): R|kotlin/Int|
+
+}
+
+public final class IntRange : R|kotlin/ranges/IntProgression|, R|kotlin/ranges/ClosedRange<kotlin/Int>| {
+    public open operator function contains(value: R|kotlin/Int|): R|kotlin/Boolean|
+
+    public open operator function equals(other: R|kotlin/Any|): R|kotlin/Boolean|
+
+    public open function hashCode(): R|kotlin/Int|
+
+    public open function isEmpty(): R|kotlin/Boolean|
+
+    public open function toString(): R|kotlin/String|
+
+}
+
+public open class LongProgression : R|kotlin/collections/Iterable<kotlin/Long>| {
+    public open operator function equals(other: R|kotlin/Any|): R|kotlin/Boolean|
+
+    public open function hashCode(): R|kotlin/Int|
+
+    public open function isEmpty(): R|kotlin/Boolean|
+
+    public open operator function iterator(): R|kotlin/collections/LongIterator|
+
+    public open function toString(): R|kotlin/String|
+
+}
+
+internal final class LongProgressionIterator : R|kotlin/collections/LongIterator| {
+    public open operator function hasNext(): R|kotlin/Boolean|
+
+    public open function nextLong(): R|kotlin/Long|
+
+}
+
+public final class LongRange : R|kotlin/ranges/LongProgression|, R|kotlin/ranges/ClosedRange<kotlin/Long>| {
+    public open operator function contains(value: R|kotlin/Long|): R|kotlin/Boolean|
+
+    public open operator function equals(other: R|kotlin/Any|): R|kotlin/Boolean|
+
+    public open function hashCode(): R|kotlin/Int|
+
+    public open function isEmpty(): R|kotlin/Boolean|
+
+    public open function toString(): R|kotlin/String|
+
+}
 

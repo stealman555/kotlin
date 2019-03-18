@@ -27,3 +27,957 @@ public final function shortArrayOf(vararg elements: R|kotlin/ShortArray|): R|kot
 public final operator function plus R|kotlin/String|.(other: R|kotlin/Any|): R|kotlin/String|
 
 public final function toString R|kotlin/Any|.(): R|kotlin/String|
+
+public abstract interface Annotation : R|kotlin/Any| {
+}
+
+public open class Any {
+    public open operator function equals(other: R|kotlin/Any|): R|kotlin/Boolean|
+
+    public open function hashCode(): R|kotlin/Int|
+
+    public open function toString(): R|kotlin/String|
+
+}
+
+<T> public final class Array : R|kotlin/Any| {
+    public final operator function get(index: R|kotlin/Int|): R|T|
+
+    public final operator function iterator(): R|kotlin/collections/Iterator<T>|
+
+    public final operator function set(index: R|kotlin/Int|, value: R|T|): R|kotlin/Unit|
+
+}
+
+public final class Boolean : R|kotlin/Comparable<kotlin/Boolean>| {
+    public final infix function and(other: R|kotlin/Boolean|): R|kotlin/Boolean|
+
+    public open operator function compareTo(other: R|kotlin/Boolean|): R|kotlin/Int|
+
+    public final operator function not(): R|kotlin/Boolean|
+
+    public final infix function or(other: R|kotlin/Boolean|): R|kotlin/Boolean|
+
+    public final infix function xor(other: R|kotlin/Boolean|): R|kotlin/Boolean|
+
+}
+
+public final class BooleanArray : R|kotlin/Any| {
+    public final operator function get(index: R|kotlin/Int|): R|kotlin/Boolean|
+
+    public final operator function iterator(): R|kotlin/collections/BooleanIterator|
+
+    public final operator function set(index: R|kotlin/Int|, value: R|kotlin/Boolean|): R|kotlin/Unit|
+
+}
+
+public final class Byte : R|kotlin/Number|, R|kotlin/Comparable<kotlin/Byte>| {
+    public open operator function compareTo(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Double|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Float|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Long|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function dec(): R|kotlin/Byte|
+
+    public final operator function div(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function div(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function div(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function div(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function div(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function inc(): R|kotlin/Byte|
+
+    public final operator function minus(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function minus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function minus(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function minus(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function minus(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function mod(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function mod(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function mod(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function mod(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function mod(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function plus(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function plus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function plus(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function plus(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function plus(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function rangeTo(other: R|kotlin/Byte|): R|kotlin/ranges/IntRange|
+
+    public final operator function rangeTo(other: R|kotlin/Int|): R|kotlin/ranges/IntRange|
+
+    public final operator function rangeTo(other: R|kotlin/Long|): R|kotlin/ranges/LongRange|
+
+    public final operator function rangeTo(other: R|kotlin/Short|): R|kotlin/ranges/IntRange|
+
+    public final operator function rem(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function rem(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function rem(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function rem(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function rem(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function times(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function times(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function times(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function times(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function times(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public open function toByte(): R|kotlin/Byte|
+
+    public open function toChar(): R|kotlin/Char|
+
+    public open function toDouble(): R|kotlin/Double|
+
+    public open function toFloat(): R|kotlin/Float|
+
+    public open function toInt(): R|kotlin/Int|
+
+    public open function toLong(): R|kotlin/Long|
+
+    public open function toShort(): R|kotlin/Short|
+
+    public final operator function unaryMinus(): R|kotlin/Int|
+
+    public final operator function unaryPlus(): R|kotlin/Int|
+
+}
+
+public final class ByteArray : R|kotlin/Any| {
+    public final operator function get(index: R|kotlin/Int|): R|kotlin/Byte|
+
+    public final operator function iterator(): R|kotlin/collections/ByteIterator|
+
+    public final operator function set(index: R|kotlin/Int|, value: R|kotlin/Byte|): R|kotlin/Unit|
+
+}
+
+public final class Char : R|kotlin/Comparable<kotlin/Char>| {
+    public open operator function compareTo(other: R|kotlin/Char|): R|kotlin/Int|
+
+    public final operator function dec(): R|kotlin/Char|
+
+    public final operator function inc(): R|kotlin/Char|
+
+    public final operator function minus(other: R|kotlin/Char|): R|kotlin/Int|
+
+    public final operator function minus(other: R|kotlin/Int|): R|kotlin/Char|
+
+    public final operator function plus(other: R|kotlin/Int|): R|kotlin/Char|
+
+    public final operator function rangeTo(other: R|kotlin/Char|): R|kotlin/ranges/CharRange|
+
+    public final function toByte(): R|kotlin/Byte|
+
+    public final function toChar(): R|kotlin/Char|
+
+    public final function toDouble(): R|kotlin/Double|
+
+    public final function toFloat(): R|kotlin/Float|
+
+    public final function toInt(): R|kotlin/Int|
+
+    public final function toLong(): R|kotlin/Long|
+
+    public final function toShort(): R|kotlin/Short|
+
+}
+
+public final class CharArray : R|kotlin/Any| {
+    public final operator function get(index: R|kotlin/Int|): R|kotlin/Char|
+
+    public final operator function iterator(): R|kotlin/collections/CharIterator|
+
+    public final operator function set(index: R|kotlin/Int|, value: R|kotlin/Char|): R|kotlin/Unit|
+
+}
+
+public abstract interface CharSequence : R|kotlin/Any| {
+    public abstract operator function get(index: R|kotlin/Int|): R|kotlin/Char|
+
+    public abstract function subSequence(startIndex: R|kotlin/Int|, endIndex: R|kotlin/Int|): R|kotlin/CharSequence|
+
+}
+
+public abstract interface Cloneable : R|kotlin/Any| {
+    protected open function clone(): R|kotlin/Any|
+
+}
+
+<T> public abstract interface Comparable : R|kotlin/Any| {
+    public abstract operator function compareTo(other: R|T|): R|kotlin/Int|
+
+}
+
+public final annotation class Deprecated : R|kotlin/Annotation| {
+}
+
+public final enum class DeprecationLevel : R|kotlin/Enum<kotlin/DeprecationLevel>| {
+}
+
+public final class Double : R|kotlin/Number|, R|kotlin/Comparable<kotlin/Double>| {
+    public final operator function compareTo(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public open operator function compareTo(other: R|kotlin/Double|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Float|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Long|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function dec(): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Byte|): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Float|): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Int|): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Long|): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Short|): R|kotlin/Double|
+
+    public final operator function inc(): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Byte|): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Float|): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Int|): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Long|): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Short|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Byte|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Float|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Int|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Long|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Short|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Byte|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Float|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Int|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Long|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Short|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Byte|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Float|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Int|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Long|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Short|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Byte|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Float|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Int|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Long|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Short|): R|kotlin/Double|
+
+    public open function toByte(): R|kotlin/Byte|
+
+    public open function toChar(): R|kotlin/Char|
+
+    public open function toDouble(): R|kotlin/Double|
+
+    public open function toFloat(): R|kotlin/Float|
+
+    public open function toInt(): R|kotlin/Int|
+
+    public open function toLong(): R|kotlin/Long|
+
+    public open function toShort(): R|kotlin/Short|
+
+    public final operator function unaryMinus(): R|kotlin/Double|
+
+    public final operator function unaryPlus(): R|kotlin/Double|
+
+}
+
+public final class DoubleArray : R|kotlin/Any| {
+    public final operator function get(index: R|kotlin/Int|): R|kotlin/Double|
+
+    public final operator function iterator(): R|kotlin/collections/DoubleIterator|
+
+    public final operator function set(index: R|kotlin/Int|, value: R|kotlin/Double|): R|kotlin/Unit|
+
+}
+
+public final annotation class DslMarker : R|kotlin/Annotation| {
+}
+
+<E> public abstract class Enum : R|kotlin/Comparable<E>| {
+    protected final function clone(): R|kotlin/Any|
+
+    public final operator function compareTo(other: R|E|): R|kotlin/Int|
+
+    public final operator function equals(other: R|kotlin/Any|): R|kotlin/Boolean|
+
+    public final function hashCode(): R|kotlin/Int|
+
+    public open function toString(): R|kotlin/String|
+
+}
+
+public final annotation class ExtensionFunctionType : R|kotlin/Annotation| {
+}
+
+public final class Float : R|kotlin/Number|, R|kotlin/Comparable<kotlin/Float>| {
+    public final operator function compareTo(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Double|): R|kotlin/Int|
+
+    public open operator function compareTo(other: R|kotlin/Float|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Long|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function dec(): R|kotlin/Float|
+
+    public final operator function div(other: R|kotlin/Byte|): R|kotlin/Float|
+
+    public final operator function div(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function div(other: R|kotlin/Int|): R|kotlin/Float|
+
+    public final operator function div(other: R|kotlin/Long|): R|kotlin/Float|
+
+    public final operator function div(other: R|kotlin/Short|): R|kotlin/Float|
+
+    public final operator function inc(): R|kotlin/Float|
+
+    public final operator function minus(other: R|kotlin/Byte|): R|kotlin/Float|
+
+    public final operator function minus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function minus(other: R|kotlin/Int|): R|kotlin/Float|
+
+    public final operator function minus(other: R|kotlin/Long|): R|kotlin/Float|
+
+    public final operator function minus(other: R|kotlin/Short|): R|kotlin/Float|
+
+    public final operator function mod(other: R|kotlin/Byte|): R|kotlin/Float|
+
+    public final operator function mod(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function mod(other: R|kotlin/Int|): R|kotlin/Float|
+
+    public final operator function mod(other: R|kotlin/Long|): R|kotlin/Float|
+
+    public final operator function mod(other: R|kotlin/Short|): R|kotlin/Float|
+
+    public final operator function plus(other: R|kotlin/Byte|): R|kotlin/Float|
+
+    public final operator function plus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function plus(other: R|kotlin/Int|): R|kotlin/Float|
+
+    public final operator function plus(other: R|kotlin/Long|): R|kotlin/Float|
+
+    public final operator function plus(other: R|kotlin/Short|): R|kotlin/Float|
+
+    public final operator function rem(other: R|kotlin/Byte|): R|kotlin/Float|
+
+    public final operator function rem(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function rem(other: R|kotlin/Int|): R|kotlin/Float|
+
+    public final operator function rem(other: R|kotlin/Long|): R|kotlin/Float|
+
+    public final operator function rem(other: R|kotlin/Short|): R|kotlin/Float|
+
+    public final operator function times(other: R|kotlin/Byte|): R|kotlin/Float|
+
+    public final operator function times(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function times(other: R|kotlin/Int|): R|kotlin/Float|
+
+    public final operator function times(other: R|kotlin/Long|): R|kotlin/Float|
+
+    public final operator function times(other: R|kotlin/Short|): R|kotlin/Float|
+
+    public open function toByte(): R|kotlin/Byte|
+
+    public open function toChar(): R|kotlin/Char|
+
+    public open function toDouble(): R|kotlin/Double|
+
+    public open function toFloat(): R|kotlin/Float|
+
+    public open function toInt(): R|kotlin/Int|
+
+    public open function toLong(): R|kotlin/Long|
+
+    public open function toShort(): R|kotlin/Short|
+
+    public final operator function unaryMinus(): R|kotlin/Float|
+
+    public final operator function unaryPlus(): R|kotlin/Float|
+
+}
+
+public final class FloatArray : R|kotlin/Any| {
+    public final operator function get(index: R|kotlin/Int|): R|kotlin/Float|
+
+    public final operator function iterator(): R|kotlin/collections/FloatIterator|
+
+    public final operator function set(index: R|kotlin/Int|, value: R|kotlin/Float|): R|kotlin/Unit|
+
+}
+
+<R> public abstract interface Function : R|kotlin/Any| {
+}
+
+public final class Int : R|kotlin/Number|, R|kotlin/Comparable<kotlin/Int>| {
+    public final infix function and(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Double|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Float|): R|kotlin/Int|
+
+    public open operator function compareTo(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Long|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function dec(): R|kotlin/Int|
+
+    public final operator function div(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function div(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function div(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function div(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function div(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function inc(): R|kotlin/Int|
+
+    public final function inv(): R|kotlin/Int|
+
+    public final operator function minus(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function minus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function minus(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function minus(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function minus(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function mod(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function mod(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function mod(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function mod(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function mod(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final infix function or(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function plus(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function plus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function plus(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function plus(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function plus(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function rangeTo(other: R|kotlin/Byte|): R|kotlin/ranges/IntRange|
+
+    public final operator function rangeTo(other: R|kotlin/Int|): R|kotlin/ranges/IntRange|
+
+    public final operator function rangeTo(other: R|kotlin/Long|): R|kotlin/ranges/LongRange|
+
+    public final operator function rangeTo(other: R|kotlin/Short|): R|kotlin/ranges/IntRange|
+
+    public final operator function rem(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function rem(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function rem(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function rem(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function rem(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final infix function shl(bitCount: R|kotlin/Int|): R|kotlin/Int|
+
+    public final infix function shr(bitCount: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function times(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function times(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function times(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function times(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function times(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public open function toByte(): R|kotlin/Byte|
+
+    public open function toChar(): R|kotlin/Char|
+
+    public open function toDouble(): R|kotlin/Double|
+
+    public open function toFloat(): R|kotlin/Float|
+
+    public open function toInt(): R|kotlin/Int|
+
+    public open function toLong(): R|kotlin/Long|
+
+    public open function toShort(): R|kotlin/Short|
+
+    public final operator function unaryMinus(): R|kotlin/Int|
+
+    public final operator function unaryPlus(): R|kotlin/Int|
+
+    public final infix function ushr(bitCount: R|kotlin/Int|): R|kotlin/Int|
+
+    public final infix function xor(other: R|kotlin/Int|): R|kotlin/Int|
+
+}
+
+public final class IntArray : R|kotlin/Any| {
+    public final operator function get(index: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function iterator(): R|kotlin/collections/IntIterator|
+
+    public final operator function set(index: R|kotlin/Int|, value: R|kotlin/Int|): R|kotlin/Unit|
+
+}
+
+public final class Long : R|kotlin/Number|, R|kotlin/Comparable<kotlin/Long>| {
+    public final infix function and(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function compareTo(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Double|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Float|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public open operator function compareTo(other: R|kotlin/Long|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function dec(): R|kotlin/Long|
+
+    public final operator function div(other: R|kotlin/Byte|): R|kotlin/Long|
+
+    public final operator function div(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function div(other: R|kotlin/Int|): R|kotlin/Long|
+
+    public final operator function div(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function div(other: R|kotlin/Short|): R|kotlin/Long|
+
+    public final operator function inc(): R|kotlin/Long|
+
+    public final function inv(): R|kotlin/Long|
+
+    public final operator function minus(other: R|kotlin/Byte|): R|kotlin/Long|
+
+    public final operator function minus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function minus(other: R|kotlin/Int|): R|kotlin/Long|
+
+    public final operator function minus(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function minus(other: R|kotlin/Short|): R|kotlin/Long|
+
+    public final operator function mod(other: R|kotlin/Byte|): R|kotlin/Long|
+
+    public final operator function mod(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function mod(other: R|kotlin/Int|): R|kotlin/Long|
+
+    public final operator function mod(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function mod(other: R|kotlin/Short|): R|kotlin/Long|
+
+    public final infix function or(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function plus(other: R|kotlin/Byte|): R|kotlin/Long|
+
+    public final operator function plus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function plus(other: R|kotlin/Int|): R|kotlin/Long|
+
+    public final operator function plus(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function plus(other: R|kotlin/Short|): R|kotlin/Long|
+
+    public final operator function rangeTo(other: R|kotlin/Byte|): R|kotlin/ranges/LongRange|
+
+    public final operator function rangeTo(other: R|kotlin/Int|): R|kotlin/ranges/LongRange|
+
+    public final operator function rangeTo(other: R|kotlin/Long|): R|kotlin/ranges/LongRange|
+
+    public final operator function rangeTo(other: R|kotlin/Short|): R|kotlin/ranges/LongRange|
+
+    public final operator function rem(other: R|kotlin/Byte|): R|kotlin/Long|
+
+    public final operator function rem(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function rem(other: R|kotlin/Int|): R|kotlin/Long|
+
+    public final operator function rem(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function rem(other: R|kotlin/Short|): R|kotlin/Long|
+
+    public final infix function shl(bitCount: R|kotlin/Int|): R|kotlin/Long|
+
+    public final infix function shr(bitCount: R|kotlin/Int|): R|kotlin/Long|
+
+    public final operator function times(other: R|kotlin/Byte|): R|kotlin/Long|
+
+    public final operator function times(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function times(other: R|kotlin/Int|): R|kotlin/Long|
+
+    public final operator function times(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function times(other: R|kotlin/Short|): R|kotlin/Long|
+
+    public open function toByte(): R|kotlin/Byte|
+
+    public open function toChar(): R|kotlin/Char|
+
+    public open function toDouble(): R|kotlin/Double|
+
+    public open function toFloat(): R|kotlin/Float|
+
+    public open function toInt(): R|kotlin/Int|
+
+    public open function toLong(): R|kotlin/Long|
+
+    public open function toShort(): R|kotlin/Short|
+
+    public final operator function unaryMinus(): R|kotlin/Long|
+
+    public final operator function unaryPlus(): R|kotlin/Long|
+
+    public final infix function ushr(bitCount: R|kotlin/Int|): R|kotlin/Long|
+
+    public final infix function xor(other: R|kotlin/Long|): R|kotlin/Long|
+
+}
+
+public final class LongArray : R|kotlin/Any| {
+    public final operator function get(index: R|kotlin/Int|): R|kotlin/Long|
+
+    public final operator function iterator(): R|kotlin/collections/LongIterator|
+
+    public final operator function set(index: R|kotlin/Int|, value: R|kotlin/Long|): R|kotlin/Unit|
+
+}
+
+public final class Nothing {
+}
+
+public abstract class Number : R|kotlin/Any| {
+    public abstract function toByte(): R|kotlin/Byte|
+
+    public abstract function toChar(): R|kotlin/Char|
+
+    public abstract function toDouble(): R|kotlin/Double|
+
+    public abstract function toFloat(): R|kotlin/Float|
+
+    public abstract function toInt(): R|kotlin/Int|
+
+    public abstract function toLong(): R|kotlin/Long|
+
+    public abstract function toShort(): R|kotlin/Short|
+
+}
+
+public final annotation class ParameterName : R|kotlin/Annotation| {
+}
+
+public final annotation class PublishedApi : R|kotlin/Annotation| {
+}
+
+public final annotation class ReplaceWith : R|kotlin/Annotation| {
+}
+
+public final class Short : R|kotlin/Number|, R|kotlin/Comparable<kotlin/Short>| {
+    public final operator function compareTo(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Double|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Float|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function compareTo(other: R|kotlin/Long|): R|kotlin/Int|
+
+    public open operator function compareTo(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function dec(): R|kotlin/Short|
+
+    public final operator function div(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function div(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function div(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function div(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function div(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function div(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function inc(): R|kotlin/Short|
+
+    public final operator function minus(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function minus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function minus(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function minus(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function minus(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function minus(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function mod(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function mod(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function mod(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function mod(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function mod(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function mod(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function plus(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function plus(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function plus(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function plus(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function plus(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function plus(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function rangeTo(other: R|kotlin/Byte|): R|kotlin/ranges/IntRange|
+
+    public final operator function rangeTo(other: R|kotlin/Int|): R|kotlin/ranges/IntRange|
+
+    public final operator function rangeTo(other: R|kotlin/Long|): R|kotlin/ranges/LongRange|
+
+    public final operator function rangeTo(other: R|kotlin/Short|): R|kotlin/ranges/IntRange|
+
+    public final operator function rem(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function rem(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function rem(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function rem(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function rem(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function rem(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public final operator function times(other: R|kotlin/Byte|): R|kotlin/Int|
+
+    public final operator function times(other: R|kotlin/Double|): R|kotlin/Double|
+
+    public final operator function times(other: R|kotlin/Float|): R|kotlin/Float|
+
+    public final operator function times(other: R|kotlin/Int|): R|kotlin/Int|
+
+    public final operator function times(other: R|kotlin/Long|): R|kotlin/Long|
+
+    public final operator function times(other: R|kotlin/Short|): R|kotlin/Int|
+
+    public open function toByte(): R|kotlin/Byte|
+
+    public open function toChar(): R|kotlin/Char|
+
+    public open function toDouble(): R|kotlin/Double|
+
+    public open function toFloat(): R|kotlin/Float|
+
+    public open function toInt(): R|kotlin/Int|
+
+    public open function toLong(): R|kotlin/Long|
+
+    public open function toShort(): R|kotlin/Short|
+
+    public final operator function unaryMinus(): R|kotlin/Int|
+
+    public final operator function unaryPlus(): R|kotlin/Int|
+
+}
+
+public final class ShortArray : R|kotlin/Any| {
+    public final operator function get(index: R|kotlin/Int|): R|kotlin/Short|
+
+    public final operator function iterator(): R|kotlin/collections/ShortIterator|
+
+    public final operator function set(index: R|kotlin/Int|, value: R|kotlin/Short|): R|kotlin/Unit|
+
+}
+
+public final annotation class SinceKotlin : R|kotlin/Annotation| {
+}
+
+public final class String : R|kotlin/Comparable<kotlin/String>|, R|kotlin/CharSequence| {
+    public open operator function compareTo(other: R|kotlin/String|): R|kotlin/Int|
+
+    public open operator function get(index: R|kotlin/Int|): R|kotlin/Char|
+
+    public final operator function plus(other: R|kotlin/Any|): R|kotlin/String|
+
+    public open function subSequence(startIndex: R|kotlin/Int|, endIndex: R|kotlin/Int|): R|kotlin/CharSequence|
+
+}
+
+public final annotation class Suppress : R|kotlin/Annotation| {
+}
+
+public open class Throwable : R|kotlin/Any| {
+}
+
+public final object Unit : R|kotlin/Any| {
+    public open function toString(): R|kotlin/String|
+
+}
+
+public final annotation class UnsafeVariance : R|kotlin/Annotation| {
+}
+
