@@ -11,6 +11,7 @@ import org.jetbrains.kotlin.descriptors.annotations.Annotations
 import org.jetbrains.kotlin.descriptors.impl.SimpleFunctionDescriptorImpl
 import org.jetbrains.kotlin.descriptors.impl.TypeParameterDescriptorImpl
 import org.jetbrains.kotlin.descriptors.impl.ValueParameterDescriptorImpl
+import org.jetbrains.kotlin.incremental.components.NoLookupLocation
 import org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin
 import org.jetbrains.kotlin.ir.declarations.IrSimpleFunction
 import org.jetbrains.kotlin.ir.declarations.impl.IrExternalPackageFragmentImpl
@@ -195,7 +196,6 @@ class IrBuiltIns(
     val throwNpeFun = defineOperator("THROW_NPE", nothing, listOf())
     val throwCceFun = defineOperator("THROW_CCE", nothing, listOf())
     val throwIseFun = defineOperator("THROW_ISE", nothing, listOf())
-    val booleanNotFun = defineOperator("NOT", bool, listOf(bool))
     val noWhenBranchMatchedExceptionFun = defineOperator("noWhenBranchMatchedException", nothing, listOf())
     val illegalArgumentExceptionFun = defineOperator("illegalArgumentException", nothing, listOf(string))
 
@@ -203,7 +203,7 @@ class IrBuiltIns(
     val eqeq = eqeqFun.descriptor
     val throwNpe = throwNpeFun.descriptor
     val throwCce = throwCceFun.descriptor
-    val booleanNot = booleanNotFun.descriptor
+    val booleanNot = builtIns.boolean.unsubstitutedMemberScope.getContributedFunctions(Name.identifier("not"), NoLookupLocation.FROM_BACKEND).single()
     val noWhenBranchMatchedException = noWhenBranchMatchedExceptionFun.descriptor
     val illegalArgumentException = illegalArgumentExceptionFun.descriptor
 
@@ -212,7 +212,7 @@ class IrBuiltIns(
     val throwNpeSymbol = throwNpeFun.symbol
     val throwCceSymbol = throwCceFun.symbol
     val throwIseSymbol = throwIseFun.symbol
-    val booleanNotSymbol = booleanNotFun.symbol
+    val booleanNotSymbol = symbolTable.referenceSimpleFunction(booleanNot)
     val noWhenBranchMatchedExceptionSymbol = noWhenBranchMatchedExceptionFun.symbol
     val illegalArgumentExceptionSymbol = illegalArgumentExceptionFun.symbol
 
