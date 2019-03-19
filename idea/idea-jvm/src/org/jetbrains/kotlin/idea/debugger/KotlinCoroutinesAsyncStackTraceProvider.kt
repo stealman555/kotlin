@@ -47,7 +47,7 @@ class KotlinCoroutinesAsyncStackTraceProvider : KotlinCoroutinesAsyncStackTraceP
         val method = location.safeMethod() ?: return null
         val threadReference = frameProxy.threadProxy().threadReference
 
-        if (threadReference == null || !threadReference.isSuspended || !suspendContext.debugProcess.isEvaluationPossible) {
+        if (threadReference == null || !threadReference.isSuspended || !suspendContext.debugProcess.canRunEvaluation) {
             return null
         }
 
