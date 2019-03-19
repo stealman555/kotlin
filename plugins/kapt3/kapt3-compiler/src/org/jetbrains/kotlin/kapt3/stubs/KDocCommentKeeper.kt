@@ -145,17 +145,7 @@ class KDocCommentKeeper(private val kaptContext: KaptContextForStubGeneration) {
                     super.visitElement(element)
                 }
             })
-        }.trimCommonIndent().trim()
-    }
-
-    private fun String.trimCommonIndent(): String {
-        val lines = lines()
-        val commonIndent = lines
-            .filter { !it.isBlank() }
-            .map { line -> line.indexOfFirst { !it.isWhitespace() } }
-            .min() ?: 0
-
-        return lines.joinToString("\n") { it.drop(commonIndent) }
+        }.trimIndent().trim()
     }
 
     private fun LeafPsiElement.isKDocStart() = elementType == KDocTokens.START
