@@ -42,8 +42,8 @@ FILE fqName:<root> fileName:/when.kt
                 GET_VAR 'tmp0_subject: Any?' type=kotlin.Any? origin=null
               then: CONST String type=kotlin.String value="String"
             BRANCH
-              if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCL
-                arg0: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=kotlin.Number
+              if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCL
+                $this: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=kotlin.Number
                   typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:Number modality:ABSTRACT visibility:public flags: superTypes:[kotlin.Any; java.io.Serializable]
                   GET_VAR 'tmp0_subject: Any?' type=kotlin.Any? origin=null
               then: CONST String type=kotlin.String value="!Number"

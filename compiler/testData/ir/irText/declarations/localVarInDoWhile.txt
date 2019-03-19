@@ -6,8 +6,8 @@ FILE fqName:<root> fileName:/localVarInDoWhile.kt
           body: COMPOSITE type=kotlin.Unit origin=null
             VAR name:x type:kotlin.Int flags:val
               CONST Int type=kotlin.Int value=42
-          condition: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          condition: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: GET_VAR 'x: Int' type=kotlin.Int origin=null
               arg1: CONST Int type=kotlin.Int value=42
 

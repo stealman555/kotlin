@@ -373,8 +373,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-stringArray>(): Array<String>' type=kotlin.Array<kotlin.String> origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-stringArray>(): Array<String>' type=kotlin.Array<kotlin.String> origin=GET_PROPERTY
@@ -383,8 +383,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-charArray>(): CharArray' type=kotlin.CharArray origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-charArray>(): CharArray' type=kotlin.CharArray origin=GET_PROPERTY
@@ -393,8 +393,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-booleanArray>(): BooleanArray' type=kotlin.BooleanArray origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-booleanArray>(): BooleanArray' type=kotlin.BooleanArray origin=GET_PROPERTY
@@ -403,8 +403,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-byteArray>(): ByteArray' type=kotlin.ByteArray origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-byteArray>(): ByteArray' type=kotlin.ByteArray origin=GET_PROPERTY
@@ -413,8 +413,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-shortArray>(): ShortArray' type=kotlin.ShortArray origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-shortArray>(): ShortArray' type=kotlin.ShortArray origin=GET_PROPERTY
@@ -423,8 +423,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-intArray>(): IntArray' type=kotlin.IntArray origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-intArray>(): IntArray' type=kotlin.IntArray origin=GET_PROPERTY
@@ -433,8 +433,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-longArray>(): LongArray' type=kotlin.LongArray origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-longArray>(): LongArray' type=kotlin.LongArray origin=GET_PROPERTY
@@ -443,8 +443,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-floatArray>(): FloatArray' type=kotlin.FloatArray origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-floatArray>(): FloatArray' type=kotlin.FloatArray origin=GET_PROPERTY
@@ -453,8 +453,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-doubleArray>(): DoubleArray' type=kotlin.DoubleArray origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-doubleArray>(): DoubleArray' type=kotlin.DoubleArray origin=GET_PROPERTY
@@ -551,8 +551,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-genericArray>(): Array<T>' type=kotlin.Array<T> origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test2: Test2<T>' type=Test2<T> origin=null
                 arg1: CALL '<get-genericArray>(): Array<T>' type=kotlin.Array<T> origin=GET_PROPERTY
@@ -658,8 +658,8 @@ FILE fqName:<root> fileName:/dataClassWithArrayMembers.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-anyArrayN>(): Array<Any>?' type=kotlin.Array<kotlin.Any>? origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test3: Test3' type=Test3 origin=null
                 arg1: CALL '<get-anyArrayN>(): Array<Any>?' type=kotlin.Array<kotlin.Any>? origin=GET_PROPERTY

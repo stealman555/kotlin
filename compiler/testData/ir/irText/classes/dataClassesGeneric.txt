@@ -97,8 +97,8 @@ FILE fqName:<root> fileName:/dataClassesGeneric.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-x>(): T' type=T origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1<T>' type=Test1<T> origin=null
                 arg1: CALL '<get-x>(): T' type=T origin=GET_PROPERTY
@@ -194,8 +194,8 @@ FILE fqName:<root> fileName:/dataClassesGeneric.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-x>(): T' type=T origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test2: Test2<T>' type=Test2<T> origin=null
                 arg1: CALL '<get-x>(): T' type=T origin=GET_PROPERTY
@@ -291,8 +291,8 @@ FILE fqName:<root> fileName:/dataClassesGeneric.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-x>(): List<T>' type=kotlin.collections.List<T> origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test3: Test3<T>' type=Test3<T> origin=null
                 arg1: CALL '<get-x>(): List<T>' type=kotlin.collections.List<T> origin=GET_PROPERTY
@@ -386,8 +386,8 @@ FILE fqName:<root> fileName:/dataClassesGeneric.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-x>(): List<String>' type=kotlin.collections.List<kotlin.String> origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test4: Test4' type=Test4 origin=null
                 arg1: CALL '<get-x>(): List<String>' type=kotlin.collections.List<kotlin.String> origin=GET_PROPERTY

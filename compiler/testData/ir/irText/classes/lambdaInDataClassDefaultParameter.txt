@@ -93,8 +93,8 @@ FILE fqName:<root> fileName:/lambdaInDataClassDefaultParameter.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-runA>(): A.(String) -> Unit' type=@[CALL 'constructor ExtensionFunctionType()' type=kotlin.ExtensionFunctionType origin=null] kotlin.Function2<A, kotlin.String, kotlin.Unit> origin=GET_PROPERTY
                   $this: GET_VAR 'this@A: A' type=A origin=null
                 arg1: CALL '<get-runA>(): A.(String) -> Unit' type=@[CALL 'constructor ExtensionFunctionType()' type=kotlin.ExtensionFunctionType origin=null] kotlin.Function2<A, kotlin.String, kotlin.Unit> origin=GET_PROPERTY
@@ -210,8 +210,8 @@ FILE fqName:<root> fileName:/lambdaInDataClassDefaultParameter.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-x>(): Any' type=kotlin.Any origin=GET_PROPERTY
                   $this: GET_VAR 'this@B: B' type=B origin=null
                 arg1: CALL '<get-x>(): Any' type=kotlin.Any origin=GET_PROPERTY

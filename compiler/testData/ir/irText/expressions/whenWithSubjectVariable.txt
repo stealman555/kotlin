@@ -24,8 +24,8 @@ FILE fqName:<root> fileName:/whenWithSubjectVariable.kt
                   typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:String modality:FINAL visibility:public flags: superTypes:[kotlin.Comparable<kotlin.String>; kotlin.CharSequence; java.io.Serializable]
                   GET_VAR 'y: Any' type=kotlin.Any origin=null
             BRANCH
-              if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCL
-                arg0: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=kotlin.Int
+              if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCL
+                $this: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=kotlin.Int
                   typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:Int modality:FINAL visibility:public flags: superTypes:[kotlin.Number; kotlin.Comparable<kotlin.Int>; java.io.Serializable]
                   GET_VAR 'y: Any' type=kotlin.Any origin=null
               then: CONST Int type=kotlin.Int value=2
@@ -39,8 +39,8 @@ FILE fqName:<root> fileName:/whenWithSubjectVariable.kt
                   GET_VAR 'y: Any' type=kotlin.Any origin=null
               then: CONST Int type=kotlin.Int value=3
             BRANCH
-              if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCL
-                arg0: CALL 'contains(Int): Boolean' type=kotlin.Boolean origin=NOT_IN
+              if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCL
+                $this: CALL 'contains(Int): Boolean' type=kotlin.Boolean origin=NOT_IN
                   $this: CALL 'rangeTo(Int): IntRange' type=kotlin.ranges.IntRange origin=RANGE
                     $this: CONST Int type=kotlin.Int value=10
                     other: CONST Int type=kotlin.Int value=20
@@ -51,4 +51,3 @@ FILE fqName:<root> fileName:/whenWithSubjectVariable.kt
             BRANCH
               if: CONST Boolean type=kotlin.Boolean value=true
               then: CONST Int type=kotlin.Int value=-1
-

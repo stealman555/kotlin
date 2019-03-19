@@ -154,8 +154,8 @@ FILE fqName:<root> fileName:/dataClasses.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-x>(): Int' type=kotlin.Int origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-x>(): Int' type=kotlin.Int origin=GET_PROPERTY
@@ -164,8 +164,8 @@ FILE fqName:<root> fileName:/dataClasses.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-y>(): String' type=kotlin.String origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-y>(): String' type=kotlin.String origin=GET_PROPERTY
@@ -174,8 +174,8 @@ FILE fqName:<root> fileName:/dataClasses.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-z>(): Any' type=kotlin.Any origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test1: Test1' type=Test1 origin=null
                 arg1: CALL '<get-z>(): Any' type=kotlin.Any origin=GET_PROPERTY
@@ -280,8 +280,8 @@ FILE fqName:<root> fileName:/dataClasses.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-x>(): Any?' type=kotlin.Any? origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test2: Test2' type=Test2 origin=null
                 arg1: CALL '<get-x>(): Any?' type=kotlin.Any? origin=GET_PROPERTY
@@ -502,8 +502,8 @@ FILE fqName:<root> fileName:/dataClasses.kt
             GET_VAR 'value-parameter other: Any?' type=kotlin.Any? origin=null
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-d>(): Double' type=kotlin.Double origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test3: Test3' type=Test3 origin=null
                 arg1: CALL '<get-d>(): Double' type=kotlin.Double origin=GET_PROPERTY
@@ -512,8 +512,8 @@ FILE fqName:<root> fileName:/dataClasses.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-dn>(): Double?' type=kotlin.Double? origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test3: Test3' type=Test3 origin=null
                 arg1: CALL '<get-dn>(): Double?' type=kotlin.Double? origin=GET_PROPERTY
@@ -522,8 +522,8 @@ FILE fqName:<root> fileName:/dataClasses.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-f>(): Float' type=kotlin.Float origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test3: Test3' type=Test3 origin=null
                 arg1: CALL '<get-f>(): Float' type=kotlin.Float origin=GET_PROPERTY
@@ -532,8 +532,8 @@ FILE fqName:<root> fileName:/dataClasses.kt
               CONST Boolean type=kotlin.Boolean value=false
         WHEN type=kotlin.Unit origin=null
           BRANCH
-            if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL '<get-df>(): Float?' type=kotlin.Float? origin=GET_PROPERTY
                   $this: GET_VAR 'this@Test3: Test3' type=Test3 origin=null
                 arg1: CALL '<get-df>(): Float?' type=kotlin.Float? origin=GET_PROPERTY

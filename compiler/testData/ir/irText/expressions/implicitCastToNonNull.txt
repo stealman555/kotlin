@@ -70,8 +70,8 @@ FILE fqName:<root> fileName:/implicitCastToNonNull.kt
     BLOCK_BODY
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: GET_VAR 'value-parameter x: T' type=T origin=null
               arg1: CONST Null type=kotlin.Nothing? value=null
           then: CALL 'invoke(P1): R' type=kotlin.Unit origin=INVOKE

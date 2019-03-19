@@ -162,8 +162,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
     BLOCK_BODY
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL 'f(Int): Int' type=kotlin.Int origin=null
                 $this: GET_OBJECT 'C' type=C
                 s: CONST Int type=kotlin.Int value=1
@@ -172,8 +172,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
             CONST String type=kotlin.String value="1"
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL 'f(String): Int' type=kotlin.Int origin=null
                 $this: GET_OBJECT 'C' type=C
                 s: CONST String type=kotlin.String value="s"
@@ -182,8 +182,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
             CONST String type=kotlin.String value="2"
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL 'f() on Boolean: Int' type=kotlin.Int origin=null
                 $this: GET_OBJECT 'C' type=C
                 $receiver: CONST Boolean type=kotlin.Boolean value=true
@@ -192,8 +192,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
             CONST String type=kotlin.String value="3"
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL '<get-p>(): Int' type=kotlin.Int origin=GET_PROPERTY
                 $this: GET_OBJECT 'C' type=C
               arg1: CONST Int type=kotlin.Int value=4
@@ -204,8 +204,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
         <set-?>: CONST Int type=kotlin.Int value=5
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL '<get-p>(): Int' type=kotlin.Int origin=GET_PROPERTY
                 $this: GET_OBJECT 'C' type=C
               arg1: CONST Int type=kotlin.Int value=5
@@ -213,8 +213,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
             CONST String type=kotlin.String value="5"
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL '<get-ext>() on Int: Int' type=kotlin.Int origin=GET_PROPERTY
                 $this: GET_OBJECT 'C' type=C
                 $receiver: CONST Int type=kotlin.Int value=5
@@ -223,8 +223,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
             CONST String type=kotlin.String value="6"
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL 'g1(T): T' type=kotlin.String origin=null
                 <T>: kotlin.String
                 $this: GET_OBJECT 'C' type=C
@@ -234,8 +234,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
             CONST String type=kotlin.String value="7"
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL '<get-g2>() on T: T' type=kotlin.String origin=GET_PROPERTY
                 <`0>: kotlin.String
                 $this: GET_OBJECT 'C' type=C
@@ -245,8 +245,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
             CONST String type=kotlin.String value="8"
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL 'fromInterface() on T: T' type=kotlin.Int origin=null
                 <T>: kotlin.Int
                 $this: GET_OBJECT 'C' type=C
@@ -256,8 +256,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
             CONST String type=kotlin.String value="9"
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL '<get-fromClass>() on T: T' type=kotlin.String origin=GET_PROPERTY
                 <`0>: kotlin.String
                 $this: GET_OBJECT 'C' type=C
@@ -267,8 +267,8 @@ FILE fqName:<root> fileName:/useImportedMember.kt
             CONST String type=kotlin.String value="10"
       WHEN type=kotlin.Unit origin=IF
         BRANCH
-          if: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-            arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          if: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL 'genericFromSuper(String): String' type=kotlin.String origin=null
                 $this: GET_OBJECT 'C' type=C
                 g: CONST String type=kotlin.String value="11"

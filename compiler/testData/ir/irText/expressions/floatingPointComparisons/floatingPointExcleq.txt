@@ -4,8 +4,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
     VALUE_PARAMETER name:y index:1 type:kotlin.Double flags:
     BLOCK_BODY
       RETURN type=kotlin.Nothing from='test1d(Double, Double): Boolean'
-        CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-          arg0: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+        CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          $this: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
             arg0: GET_VAR 'value-parameter x: Double' type=kotlin.Double origin=null
             arg1: GET_VAR 'value-parameter y: Double' type=kotlin.Double origin=null
   FUN name:test2d visibility:public modality:FINAL <> (x:kotlin.Double, y:kotlin.Double?) returnType:kotlin.Boolean flags:
@@ -13,8 +13,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
     VALUE_PARAMETER name:y index:1 type:kotlin.Double? flags:
     BLOCK_BODY
       RETURN type=kotlin.Nothing from='test2d(Double, Double?): Boolean'
-        CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-          arg0: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+        CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          $this: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
             arg0: GET_VAR 'value-parameter x: Double' type=kotlin.Double origin=null
             arg1: GET_VAR 'value-parameter y: Double?' type=kotlin.Double? origin=null
   FUN name:test3d visibility:public modality:FINAL <> (x:kotlin.Double, y:kotlin.Any) returnType:kotlin.Boolean flags:
@@ -22,8 +22,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
     VALUE_PARAMETER name:y index:1 type:kotlin.Any flags:
     BLOCK_BODY
       RETURN type=kotlin.Nothing from='test3d(Double, Any): Boolean'
-        CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-          arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+        CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
             arg0: GET_VAR 'value-parameter x: Double' type=kotlin.Double origin=null
             arg1: GET_VAR 'value-parameter y: Any' type=kotlin.Any origin=null
   FUN name:test4d visibility:public modality:FINAL <> (x:kotlin.Double, y:kotlin.Number) returnType:kotlin.Boolean flags:
@@ -31,8 +31,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
     VALUE_PARAMETER name:y index:1 type:kotlin.Number flags:
     BLOCK_BODY
       RETURN type=kotlin.Nothing from='test4d(Double, Number): Boolean'
-        CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-          arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+        CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
             arg0: GET_VAR 'value-parameter x: Double' type=kotlin.Double origin=null
             arg1: GET_VAR 'value-parameter y: Number' type=kotlin.Number origin=null
   FUN name:test5d visibility:public modality:FINAL <> (x:kotlin.Double, y:kotlin.Any) returnType:kotlin.Boolean flags:
@@ -45,8 +45,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
             if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=kotlin.Double
               typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:Double modality:FINAL visibility:public flags: superTypes:[kotlin.Number; kotlin.Comparable<kotlin.Double>; java.io.Serializable]
               GET_VAR 'value-parameter y: Any' type=kotlin.Any origin=null
-            then: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            then: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: GET_VAR 'value-parameter x: Double' type=kotlin.Double origin=null
                 arg1: TYPE_OP type=kotlin.Double origin=IMPLICIT_CAST typeOperand=kotlin.Double
                   typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:Double modality:FINAL visibility:public flags: superTypes:[kotlin.Number; kotlin.Comparable<kotlin.Double>; java.io.Serializable]
@@ -72,8 +72,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
               BRANCH
                 if: CONST Boolean type=kotlin.Boolean value=true
                 then: CONST Boolean type=kotlin.Boolean value=false
-            then: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            then: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: TYPE_OP type=kotlin.Double origin=IMPLICIT_CAST typeOperand=kotlin.Double
                   typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:Double modality:FINAL visibility:public flags: superTypes:[kotlin.Number; kotlin.Comparable<kotlin.Double>; java.io.Serializable]
                   GET_VAR 'value-parameter x: Any' type=kotlin.Any origin=null
@@ -88,8 +88,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
     VALUE_PARAMETER name:y index:1 type:kotlin.Float flags:
     BLOCK_BODY
       RETURN type=kotlin.Nothing from='test1f(Float, Float): Boolean'
-        CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-          arg0: CALL 'ieee754equals(Float?, Float?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+        CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          $this: CALL 'ieee754equals(Float?, Float?): Boolean' type=kotlin.Boolean origin=EXCLEQ
             arg0: GET_VAR 'value-parameter x: Float' type=kotlin.Float origin=null
             arg1: GET_VAR 'value-parameter y: Float' type=kotlin.Float origin=null
   FUN name:test2f visibility:public modality:FINAL <> (x:kotlin.Float, y:kotlin.Float?) returnType:kotlin.Boolean flags:
@@ -97,8 +97,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
     VALUE_PARAMETER name:y index:1 type:kotlin.Float? flags:
     BLOCK_BODY
       RETURN type=kotlin.Nothing from='test2f(Float, Float?): Boolean'
-        CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-          arg0: CALL 'ieee754equals(Float?, Float?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+        CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          $this: CALL 'ieee754equals(Float?, Float?): Boolean' type=kotlin.Boolean origin=EXCLEQ
             arg0: GET_VAR 'value-parameter x: Float' type=kotlin.Float origin=null
             arg1: GET_VAR 'value-parameter y: Float?' type=kotlin.Float? origin=null
   FUN name:test3f visibility:public modality:FINAL <> (x:kotlin.Float, y:kotlin.Any) returnType:kotlin.Boolean flags:
@@ -106,8 +106,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
     VALUE_PARAMETER name:y index:1 type:kotlin.Any flags:
     BLOCK_BODY
       RETURN type=kotlin.Nothing from='test3f(Float, Any): Boolean'
-        CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-          arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+        CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
             arg0: GET_VAR 'value-parameter x: Float' type=kotlin.Float origin=null
             arg1: GET_VAR 'value-parameter y: Any' type=kotlin.Any origin=null
   FUN name:test4f visibility:public modality:FINAL <> (x:kotlin.Float, y:kotlin.Number) returnType:kotlin.Boolean flags:
@@ -115,8 +115,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
     VALUE_PARAMETER name:y index:1 type:kotlin.Number flags:
     BLOCK_BODY
       RETURN type=kotlin.Nothing from='test4f(Float, Number): Boolean'
-        CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-          arg0: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+        CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+          $this: CALL 'EQEQ(Any?, Any?): Boolean' type=kotlin.Boolean origin=EXCLEQ
             arg0: GET_VAR 'value-parameter x: Float' type=kotlin.Float origin=null
             arg1: GET_VAR 'value-parameter y: Number' type=kotlin.Number origin=null
   FUN name:test5f visibility:public modality:FINAL <> (x:kotlin.Float, y:kotlin.Any) returnType:kotlin.Boolean flags:
@@ -129,8 +129,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
             if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=kotlin.Float
               typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:Float modality:FINAL visibility:public flags: superTypes:[kotlin.Number; kotlin.Comparable<kotlin.Float>; java.io.Serializable]
               GET_VAR 'value-parameter y: Any' type=kotlin.Any origin=null
-            then: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'ieee754equals(Float?, Float?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            then: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'ieee754equals(Float?, Float?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: GET_VAR 'value-parameter x: Float' type=kotlin.Float origin=null
                 arg1: TYPE_OP type=kotlin.Float origin=IMPLICIT_CAST typeOperand=kotlin.Float
                   typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:Float modality:FINAL visibility:public flags: superTypes:[kotlin.Number; kotlin.Comparable<kotlin.Float>; java.io.Serializable]
@@ -156,8 +156,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
               BRANCH
                 if: CONST Boolean type=kotlin.Boolean value=true
                 then: CONST Boolean type=kotlin.Boolean value=false
-            then: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'ieee754equals(Float?, Float?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            then: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'ieee754equals(Float?, Float?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: TYPE_OP type=kotlin.Float origin=IMPLICIT_CAST typeOperand=kotlin.Float
                   typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:Float modality:FINAL visibility:public flags: superTypes:[kotlin.Number; kotlin.Comparable<kotlin.Float>; java.io.Serializable]
                   GET_VAR 'value-parameter x: Any' type=kotlin.Any origin=null
@@ -185,8 +185,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
               BRANCH
                 if: CONST Boolean type=kotlin.Boolean value=true
                 then: CONST Boolean type=kotlin.Boolean value=false
-            then: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            then: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: CALL 'toDouble(): Double' type=kotlin.Double origin=null
                   $this: TYPE_OP type=kotlin.Float origin=IMPLICIT_CAST typeOperand=kotlin.Float
                     typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:Float modality:FINAL visibility:public flags: superTypes:[kotlin.Number; kotlin.Comparable<kotlin.Float>; java.io.Serializable]
@@ -215,8 +215,8 @@ FILE fqName:<root> fileName:/floatingPointExcleq.kt
               BRANCH
                 if: CONST Boolean type=kotlin.Boolean value=true
                 then: CONST Boolean type=kotlin.Boolean value=false
-            then: CALL 'NOT(Boolean): Boolean' type=kotlin.Boolean origin=EXCLEQ
-              arg0: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
+            then: CALL 'not(): Boolean' type=kotlin.Boolean origin=EXCLEQ
+              $this: CALL 'ieee754equals(Double?, Double?): Boolean' type=kotlin.Boolean origin=EXCLEQ
                 arg0: TYPE_OP type=kotlin.Double origin=IMPLICIT_CAST typeOperand=kotlin.Double
                   typeOperand: CLASS IR_EXTERNAL_DECLARATION_STUB CLASS name:Double modality:FINAL visibility:public flags: superTypes:[kotlin.Number; kotlin.Comparable<kotlin.Double>; java.io.Serializable]
                   GET_VAR 'value-parameter x: Any' type=kotlin.Any origin=null
