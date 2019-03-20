@@ -52,7 +52,6 @@ import org.jetbrains.kotlin.resolve.calls.model.ArgumentMatch
 import org.jetbrains.kotlin.resolve.constants.IntegerValueTypeConstructor
 import org.jetbrains.kotlin.resolve.descriptorUtil.fqNameSafe
 import org.jetbrains.kotlin.serialization.deserialization.descriptors.DeserializedCallableMemberDescriptor
-import org.jetbrains.kotlin.serialization.deserialization.descriptors.DeserializedClassConstructorDescriptor
 import org.jetbrains.kotlin.serialization.deserialization.descriptors.DeserializedClassDescriptor
 import org.jetbrains.kotlin.synthetic.SamAdapterExtensionFunctionDescriptor
 import org.jetbrains.kotlin.type.MapPsiToAsmDesc
@@ -67,7 +66,7 @@ import java.text.StringCharacterIterator
 internal val KOTLIN_CACHED_UELEMENT_KEY = Key.create<WeakReference<UElement>>("cached-kotlin-uelement")
 
 @Suppress("NOTHING_TO_INLINE")
-internal inline fun String?.orAnonymous(kind: String = ""): String = this ?: "<anonymous"+(if (kind.isNotBlank()) " $kind" else "")+">"
+internal inline fun String?.orAnonymous(kind: String = ""): String = this ?: "<anonymous" + (if (kind.isNotBlank()) " $kind" else "") + ">"
 
 internal fun DeclarationDescriptor.toSource(): PsiElement? {
     return try {
@@ -119,9 +118,10 @@ internal fun resolveContainingDeserializedClass(context: KtElement, memberDescri
 
 internal fun resolveToPsiClass(uElement: UElement, declarationDescriptor: DeclarationDescriptor, context: KtElement): PsiClass? =
     when (declarationDescriptor) {
-        is DeserializedClassConstructorDescriptor -> declarationDescriptor.returnType
+        is ConstructorDescriptor -> declarationDescriptor.returnType
         is ClassDescriptor -> declarationDescriptor.defaultType
         is TypeParameterDescriptor -> declarationDescriptor.defaultType
+        is TypeAliasDescriptor -> declarationDescriptor.expandedType
         else -> null
     }?.toPsiType(uElement, context, true).let { PsiTypesUtil.getPsiClass(it) }
 
@@ -350,3 +350,5 @@ internal fun KotlinULambdaExpression.getFunctionalInterfaceType(): PsiType? {
 }
 
 internal fun unwrapFakeFileForLightClass(file: PsiFile): PsiFile = (file as? FakeFileForLightClass)?.ktFile ?: file
+
+
