@@ -1114,7 +1114,7 @@ open class IrModuleSerializer(
             .setAnnotations(serializeAnnotations(file.annotations))
 
         file.declarations.forEach {
-            if (it is IrTypeAlias || (it.descriptor.isExpectMember && !it.descriptor.isSerializableExpectClass)) {
+            if (it is IrTypeAlias || (it.isExpect && !it.descriptor.isSerializableExpectClass)) {
                 writer.skipDeclaration()
                 return@forEach
             }
