@@ -540,7 +540,7 @@ tasks {
                   ":idea:idea-gradle-native:test",
                   ":idea:idea-maven:test",
                   ":j2k:test",
-                  ":idea:eval4j:test")
+                  ":eval4j:test")
     }
 
     create("idea-plugin-tests") {
