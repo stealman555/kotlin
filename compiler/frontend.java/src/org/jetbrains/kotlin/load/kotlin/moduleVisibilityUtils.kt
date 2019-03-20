@@ -66,12 +66,16 @@ fun isContainedByCompiledPartOfOurModule(descriptor: DeclarationDescriptor, outD
 
     if (binaryClass is VirtualFileKotlinClass) {
         val file = binaryClass.file
-        val ioFile = when (file.fileSystem.protocol) {
-            StandardFileSystems.FILE_PROTOCOL -> VfsUtilCore.virtualToIoFile(file)
-            StandardFileSystems.JAR_PROTOCOL -> VfsUtilCore.getVirtualFileForJar(file)?.let(VfsUtilCore::virtualToIoFile)
-            else -> null
+        when (file.fileSystem.protocol) {
+            StandardFileSystems.FILE_PROTOCOL -> {
+                val ioFile = VfsUtilCore.virtualToIoFile(file)
+                return ioFile.toPath().startsWith(outDirectory.toPath())
+            }
+            StandardFileSystems.JAR_PROTOCOL -> {
+                val ioFile = VfsUtilCore.getVirtualFileForJar(file)?.let(VfsUtilCore::virtualToIoFile)
+                return ioFile != null && ioFile.toPath() == outDirectory.toPath()
+            }
         }
-        return ioFile != null && ioFile.toPath().startsWith(outDirectory.toPath())
     }
 
     return false
