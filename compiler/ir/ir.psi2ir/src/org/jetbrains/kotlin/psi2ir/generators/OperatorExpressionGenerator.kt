@@ -241,12 +241,11 @@ class OperatorExpressionGenerator(statementGenerator: StatementGenerator) : Stat
             IrStatementOrigin.IN ->
                 irContainsCall
             IrStatementOrigin.NOT_IN ->
-                IrUnaryPrimitiveImpl(
+                primitiveOp1(
                     expression.startOffsetSkippingComments, expression.endOffset,
+                    context.irBuiltIns.booleanNotSymbol,
                     context.irBuiltIns.booleanType,
                     IrStatementOrigin.NOT_IN,
-                    context.irBuiltIns.booleanNotSymbol,
-                    true,
                     irContainsCall
                 )
             else ->
@@ -273,12 +272,11 @@ class OperatorExpressionGenerator(statementGenerator: StatementGenerator) : Stat
             IrStatementOrigin.EQEQEQ ->
                 irIdentityEquals
             IrStatementOrigin.EXCLEQEQ ->
-                IrUnaryPrimitiveImpl(
+                primitiveOp1(
                     expression.startOffsetSkippingComments, expression.endOffset,
+                    context.irBuiltIns.booleanNotSymbol,
                     context.irBuiltIns.booleanType,
                     IrStatementOrigin.EXCLEQEQ,
-                    context.irBuiltIns.booleanNotSymbol,
-                    true,
                     irIdentityEquals
                 )
             else ->
@@ -316,12 +314,11 @@ class OperatorExpressionGenerator(statementGenerator: StatementGenerator) : Stat
             IrStatementOrigin.EQEQ ->
                 irEquals
             IrStatementOrigin.EXCLEQ ->
-                IrUnaryPrimitiveImpl(
+                primitiveOp1(
                     expression.startOffsetSkippingComments, expression.endOffset,
+                    context.irBuiltIns.booleanNotSymbol,
                     context.irBuiltIns.booleanType,
                     IrStatementOrigin.EXCLEQ,
-                    context.irBuiltIns.booleanNotSymbol,
-                    true,
                     irEquals
                 )
             else ->

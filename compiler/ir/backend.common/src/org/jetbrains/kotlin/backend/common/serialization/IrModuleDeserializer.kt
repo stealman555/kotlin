@@ -262,8 +262,6 @@ abstract class IrModuleDeserializer(
                 )
             KotlinIr.IrCall.Primitive.NULLARY ->
                 IrNullaryPrimitiveImpl(start, end, type, null, symbol)
-            KotlinIr.IrCall.Primitive.UNARY ->
-                IrUnaryPrimitiveImpl(start, end, type, null, symbol, proto.memberAccess.hasDispatchReceiver())
             KotlinIr.IrCall.Primitive.BINARY ->
                 IrBinaryPrimitiveImpl(start, end, type, null, symbol)
             else -> TODO("Unexpected primitive IrCall.")

@@ -31,10 +31,11 @@ fun primitiveOp1(
     primitiveOpSymbol: IrSimpleFunctionSymbol,
     primitiveOpReturnType: IrType,
     origin: IrStatementOrigin,
-    hasDispatchReceiver: Boolean,
-    argument: IrExpression
+    dispatchReceiver: IrExpression
 ): IrExpression =
-    IrUnaryPrimitiveImpl(startOffset, endOffset, primitiveOpReturnType, origin, primitiveOpSymbol, hasDispatchReceiver, argument)
+    IrCallImpl(startOffset, endOffset, primitiveOpReturnType, primitiveOpSymbol, primitiveOpSymbol.descriptor, origin = origin).also {
+        it.dispatchReceiver = dispatchReceiver
+    }
 
 fun primitiveOp2(
     startOffset: Int, endOffset: Int,
