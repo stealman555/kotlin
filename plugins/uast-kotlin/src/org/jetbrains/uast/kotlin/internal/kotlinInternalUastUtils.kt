@@ -52,6 +52,7 @@ import org.jetbrains.kotlin.resolve.calls.model.ArgumentMatch
 import org.jetbrains.kotlin.resolve.constants.IntegerValueTypeConstructor
 import org.jetbrains.kotlin.resolve.descriptorUtil.fqNameSafe
 import org.jetbrains.kotlin.serialization.deserialization.descriptors.DeserializedCallableMemberDescriptor
+import org.jetbrains.kotlin.serialization.deserialization.descriptors.DeserializedClassConstructorDescriptor
 import org.jetbrains.kotlin.serialization.deserialization.descriptors.DeserializedClassDescriptor
 import org.jetbrains.kotlin.synthetic.SamAdapterExtensionFunctionDescriptor
 import org.jetbrains.kotlin.type.MapPsiToAsmDesc
@@ -115,6 +116,15 @@ internal fun resolveContainingDeserializedClass(context: KtElement, memberDescri
         else -> return null
     }
 }
+
+internal fun resolveToPsiClass(uElement: UElement, declarationDescriptor: DeclarationDescriptor, context: KtElement): PsiClass? =
+    when (declarationDescriptor) {
+        is DeserializedClassConstructorDescriptor -> declarationDescriptor.returnType
+        is ClassDescriptor -> declarationDescriptor.defaultType
+        is TypeParameterDescriptor -> declarationDescriptor.defaultType
+        else -> null
+    }?.toPsiType(uElement, context, true).let { PsiTypesUtil.getPsiClass(it) }
+
 
 private fun resolveDeserialized(context: KtElement, descriptor: DeclarationDescriptor): PsiMethod? {
     if (descriptor !is DeserializedCallableMemberDescriptor) return null
